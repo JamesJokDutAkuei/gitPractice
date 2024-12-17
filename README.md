@@ -864,10 +864,112 @@ $
 
 ## Buddle 3
 
-### Exercise 1
+### Exercise 2
 
 ```bash
 
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/faq-page)
+$ git branch -v
+  dev                 86fca50 initial files
+  ft/bundle-2         1df2aaf Add services.html page with content
+  ft/contact-page     3e82cf8 added a h1
+* ft/faq-page         80c8d48 added a faq intro
+  ft/service-redesign e1f935b merged files
+  ft/team-page        62d8952 Revert "team file"
+  main                e7c7c04 Merge branch 'main' of https://github.com/JamesJokDutAkuei/gitPractice
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/faq-page)
+$ git branch ft/home-page-redesign
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/faq-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ echo "<!-- Updated Main Branch -->" >> index.html
+bash: !-: event not found
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ echo "<!-- Updated Main Branch -->" > index.html
+bash: !-: event not found
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ echo "<!-- Updated Main Branch -->" >> index.html
+bash: !-: event not found
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ ^C
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ ls
+README.md  contact.html  faq.html  index.css  index.html  index.js  services.html  team.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ vi index.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git add index.html
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git commit -m "Update index.html with changes in main branch"
+[main a9b89b0] Update index.html with changes in main branch
+ 1 file changed, 1 insertion(+)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+   e7c7c04..a9b89b0  main -> main
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/home-page-redesign)
+$ echo "<h1>Welcome to Our Redesigned Home Page</h1>" > home.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/home-page-redesign)
+$ git add home.html
+warning: in the working copy of 'home.html', LF will be replaced by CRLF the next time Git touches it
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/home-page-redesign)
+$ git commit -m "Add redesigned home page content"
+[ft/home-page-redesign 241ec69] Add redesigned home page content
+ 1 file changed, 1 insertion(+)
+ create mode 100644 home.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/home-page-redesign)
+$ git push origin ft/home-page-redesign
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/JamesJokDutAkuei/gitPractice/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
 
 
 ```
