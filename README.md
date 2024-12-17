@@ -232,6 +232,173 @@ To https://github.com/JamesJokDutAkuei/gitPractice.git
 
 ```bash
 
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/bundle-2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ ls
+README.md  index.css  index.html  index.js  services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ vi services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ vi services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git add .
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git commit -m "added a paragraph and h2"
+[ft/service-redesign d7f4a20] added a paragraph and h2
+ 1 file changed, 2 insertions(+)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git push origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 321 bytes | 321.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/JamesJokDutAkuei/gitPractice/pull/new/ft/service-redesign
+remote:
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$  git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ vi services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ echo "<p>Conflicting Service Changes</p>" >> services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git add .
+warning: in the working copy of 'services.html', LF will be replaced by CRLF the next time Git touches it
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git commit -m "Add conflicting changes to services.html"
+[main a223722] Add conflicting changes to services.html
+ 1 file changed, 1 insertion(+)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 343 bytes | 343.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+   a491cfc..a223722  main -> main
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ ls
+README.md  index.css  index.html  index.js  services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ cat services.html
+<h1>Our Services</h1>
+<p>Our services are life changing</p>
+<p>Conflicting Service Changes</p>
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git diff main
+diff --git a/services.html b/services.html
+index be93d05..1b74710 100644
+--- a/services.html
++++ b/services.html
+@@ -1,3 +1,3 @@
+ <h1>Our Services</h1>
+ <p>Our services are life changing</p>
+-<p>Conflicting Service Changes</p>
++<h2>How?</h2>
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ vi services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign|MERGING)
+$ vi services.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign|MERGING)
+$ git merge main
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign|MERGING)
+$ git add .
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign|MERGING)
+$ git status
+On branch ft/service-redesign
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   services.html
+
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign|MERGING)
+$ git commit -m "merged files"
+[ft/service-redesign e1f935b] merged files
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git push origin ft/service-redesign
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 212 bytes | 212.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+   d7f4a20..e1f935b  ft/service-redesign -> ft/service-redesign
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$ git merge main
+Already up to date.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/service-redesign)
+$
+```
+
+## Buddle 3
+
+### Exercise 1
+
+```bash
+
 
 
 ```
