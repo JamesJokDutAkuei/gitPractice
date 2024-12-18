@@ -873,3 +873,107 @@ To https://github.com/JamesJokDutAkuei/gitPracticeProject-copy.git
 LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
 $
 ```
+
+### Exercise 2
+```bash
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ echo "<footer>First footer content</footer>" >> footer.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git add footer.html
+warning: in the working copy of 'footer.html', LF will be replaced by CRLF the next time Git touches it
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git commit -m "Add first footer content"
+[ft/footer 44476d9] Add first footer content
+ 1 file changed, 1 insertion(+)
+ create mode 100644 footer.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ echo "<footer>Additional footer content</footer>" >> footer.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git add footer.html
+warning: in the working copy of 'footer.html', LF will be replaced by CRLF the next time Git touches it
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git commit -m "Add additional footer content"
+[ft/footer fb996ed] Add additional footer content
+ 1 file changed, 1 insertion(+)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git push origin ft/f
+ft/faq-page   ft/footer
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 592 bytes | 592.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/JamesJokDutAkuei/gitPractice/pull/new/ft/footer
+remote:
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+ * [new branch]      ft/footer -> ft/footer
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git branch ft/squashing
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/squashing)
+$ git merge --squash ft/footer
+Updating 079e6bd..fb996ed
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 footer.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/squashing)
+$ git add .
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing ef0ea1b] footer changes squashing
+ 1 file changed, 2 insertions(+)
+ create mode 100644 footer.html
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/squashing)
+$ git push origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 317 bytes | 158.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/JamesJokDutAkuei/gitPractice/pull/new/ft/squashing
+remote:
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/squashing)
+$
+```
