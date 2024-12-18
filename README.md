@@ -811,3 +811,65 @@ To https://github.com/JamesJokDutAkuei/gitPractice.git
 
 
 ```
+
+## Buddle 4
+
+### Exercise 1
+```bash
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git remote add git-copy https://github.com/JamesJokDutAkuei/gitPracticeProject-copy.git
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git remote -v
+git-copy        https://github.com/JamesJokDutAkuei/gitPracticeProject-copy.git (fetch)
+git-copy        https://github.com/JamesJokDutAkuei/gitPracticeProject-copy.git (push)
+origin  https://github.com/JamesJokDutAkuei/gitPractice.git (fetch)
+origin  https://github.com/JamesJokDutAkuei/gitPractice.git (push)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ echo "<p>New changes for the home page</p>" >> home.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git add .
+warning: in the working copy of 'home.html', LF will be replaced by CRLF the next time Git touches it
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git commit -m "Update home page with new changes"
+[main 774dc11] Update home page with new changes
+ 1 file changed, 1 insertion(+)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 349 bytes | 349.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/JamesJokDutAkuei/gitPractice.git
+   b11bd5d..774dc11  main -> main
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git push git-copy main ^C
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$ git push git-copy main
+Enumerating objects: 57, done.
+Counting objects: 100% (57/57), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (51/51), done.
+Writing objects: 100% (57/57), 14.69 KiB | 1.47 MiB/s, done.
+Total 57 (delta 22), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (22/22), done.
+To https://github.com/JamesJokDutAkuei/gitPracticeProject-copy.git
+ * [new branch]      main -> main
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (main)
+$
+```
