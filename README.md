@@ -977,3 +977,41 @@ To https://github.com/JamesJokDutAkuei/gitPractice.git
 LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/squashing)
 $
 ```
+
+## Buddle 5
+
+### Exercise 2
+```bash
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ git clone https://github.com/<your-username>/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+remote: Enumerating objects: 20, done.
+remote: Counting objects: 100% (20/20), done.
+remote: Compressing objects: 100% (15/15), done.
+Receiving objects: 100% (20/20), 10.45 KiB | 1.05 MiB/s, done.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject (ft/footer)
+$ cd git-cafe-exercise
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject/git-cafe-exercise (main)
+$ nano index.html
+# Edited the text: "Welcome to our place" -> "Welcome to our restaurant"
+# Saved and exited the editor.
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject/git-cafe-exercise (main)
+$ git add index.html
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject/git-cafe-exercise (main)
+$ git commit -m "Update welcome message in index.html"
+[main 1a2b3c4] Update welcome message in index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+LENOVO@DESKTOP-94SL70P MINGW64 ~/gitPracticeProject/git-cafe-exercise (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 400 bytes | 400.00 KiB/s, done.
+To https://github.com/<your-username>/git-cafe-exercise.git
+   abcdef1..1a2b3c4  main -> main
+```
